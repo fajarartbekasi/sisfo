@@ -10,4 +10,8 @@ class PendaftaranController extends Controller
     {
         return view('pendaftaran.index');
     }
+    public function create()
+    {
+        return view('pendaftaran.create');
+    }
 }

@@ -17,7 +17,7 @@
                         Silahkan Cek Data pendaftaran dibawah ini, terimakasih.
                     </div>
                     <div>
-                        <a href="http://" class="btn btn-outline-info ">Tambah Pendaftaran</a>
+                        <a href="{{route('pendaftaran.create')}}" class="btn btn-outline-info ">Tambah Pendaftaran</a>
                     </div>
                 </div>
             </div>

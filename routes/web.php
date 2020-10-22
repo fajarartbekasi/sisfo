@@ -24,4 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'pendaftaran'], function(){
     Route::get('/', 'PendaftaranController@index')->name('pendaftaran');
+    Route::get('/create', 'PendaftaranController@create')->name('pendaftaran.create');
 });
