@@ -26,3 +26,9 @@ Route::group(['prefix' => 'pendaftaran'], function(){
     Route::get('/', 'PendaftaranController@index')->name('pendaftaran');
     Route::get('/create', 'PendaftaranController@create')->name('pendaftaran.create');
 });
+
+Route::group(['prefix' => 'Data'], function(){
+    Route::get('/santri/diterima', 'Santri\DiterimaController@index')->name('Data.santri.diterima');
+
+    Route::get('/santri/ditolak', 'Santri\DitolakController@index')->name('Data.santri.ditolak');
+});
