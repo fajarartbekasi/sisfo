@@ -39,10 +39,7 @@
                         <td>Laki - Laki</td>
                         <td>Bekasi, 21-21-20</td>
                         <td>
-                            <form action="" method="post">
-                                <a href="http://" class="btn btn-outline-info btn-sm">Edit</a>
-                                <button class="btn btn-outline-danger btn-sm">Hapus</button>
-                            </form>
+                            <a href="http://" class="btn btn-outline-info btn-sm">Print</a>
                         </td>
                     </tr>
                 </tbody>

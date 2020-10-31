@@ -10,91 +10,80 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+    <body stylesheet="padding-top: 3.5rem;">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-teal-600">
+            <a class="navbar-brand" href="#">TPQ Masjid Ziyaadaturrahman</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{route('pendaftaran.create')}}">Pendaftaran</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    @if (Route::has('login'))
+                        <div class="top-right links">
+                            @auth
+                                <a href="{{ url('/home') }}" class="text-white">Home</a>
+                            @else
+                                <a href="{{ route('login') }}" class="btn btn-outline-info mr-2">Login</a>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="btn btn-outline-warning">Register</a>
+                                @endif
+                            @endauth
+                        </div>
+                    @endif
                 </div>
             </div>
-        </div>
+        </nav>
+        <main role="main">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-3">Hello, </h1>
+                    <p>
+                        Selamat datang di website resmi TPQ Masjid Ziyaadaturrahman
+                    </p>
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card border-0 shadow" style="margin-top: -70px;">
+                    <div class="card-body">
+                        <div>
+                            <h3>Prosedur pendaftaran online</h3>
+                            <ul>
+                                <li>Akses situs</li>
+                                <li>klik menu pendaftaran</li>
+                                <li>masukan semua informasi dengan benar</li>
+                                <li>melakukan test secara langsung</li>
+                                <li>informasi diterima dan tidak nya akan di infokan ke email</li>
+                                <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Pendaftaran secara offline</h3>
+                            <li>Silahkan Datang ke alamat ini</li>
+                            <li>Silahkan mengambil formulir dibagian pendaftaran</li>
+                            <li>setelah mengisi informasi dan menyerahkan formulir</li>
+                            <li>melakukan test secara langsung</li>
+                            <li>informasi diterima dan tidak nya akan di infokan ke email</li>
+                            <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>

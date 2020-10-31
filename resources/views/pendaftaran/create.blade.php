@@ -65,7 +65,10 @@
                             <textarea class="form-control" name="" id="">
                             </textarea>
                         </div>
-
+                        <div class="form-group">
+                            <label for="">E-mail</label>
+                            <input type="email" name="email" id="" class="form-control">
+                        </div>
                         <div class="alert alert-info">
                             <h3>Perincian Pembayaran</h3>
                             <table class="table table-striped border-0">
@@ -88,6 +91,28 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <div class="form-group">
+                                <label for="">KELENGKAPAN PERSYARATAN ADMINISTRASI</label>
+                                <input type="file" name="" class="form-control" id="">
+                            </div>
+
+                            <div class="pt-3">
+                                <p>Silahkan masukan semua berkas dibawah ini kedalam satu folder dan extrack menjadi rar/zip</p>
+                                <ul>
+                                    <li>Foto copy akta kelahiran</li>
+                                    <li>Foto copy KK</li>
+                                    <li>Foto copy KTP Ayah, atau ibu/wali</li>
+                                    <li>Pas Photo berwarna 4x6 4lbr</li>
+                                    <li>Mengisi surat MOU</li>
+                                    <li>Surat Kematian Ayah/Ibu</li>
+                                    <li>Surat Keterangan tidak mampu</li>
+                                    <li>Menyerahkan ijazah asli</li>
+                                    <li>Photo rumah dan calon santri</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="mb-2">

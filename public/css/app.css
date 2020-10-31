@@ -10903,3 +10903,8 @@ a.text-dark:focus {
   }
 }
 
+.bg-teal-600 {
+  background-color: #319795;
+  color: #234e52;
+}
+
