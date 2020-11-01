@@ -11,3 +11,19 @@
     background-color: #319795;
     color: #234e52;
 }
+.jumbotron {
+    padding: 3rem 14rem;
+    margin-bottom: 2rem;
+    background-size: 99%;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.footer {
+  background-color: #319795;
+  color: #234e52;
+}
