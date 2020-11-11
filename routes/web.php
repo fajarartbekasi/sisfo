@@ -32,3 +32,8 @@ Route::group(['prefix' => 'Data'], function(){
 
     Route::get('/santri/ditolak', 'Santri\DitolakController@index')->name('Data.santri.ditolak');
 });
+
+Route::group(['prefix' => 'kegiatan'], function (){
+
+    route::get('/create', 'Kegiatan\KegiatanController@create')->name('kegiatan.create');
+});
