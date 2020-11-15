@@ -42,6 +42,15 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="">Kelas</label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Pilih Kelas</option>
+                                <option value="">Pagi</option>
+                                <option value="">Sore</option>
+                                <option value="">Malam</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="">Jumlah Sodara</label>
                             <input type="number" class="form-control" id="">
                         </div>
