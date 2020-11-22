@@ -37,3 +37,7 @@ Route::group(['prefix' => 'kegiatan'], function (){
 
     route::get('/create', 'Kegiatan\KegiatanController@create')->name('kegiatan.create');
 });
+
+Route::get('about', 'AboutController@index')->name('about');
+
+Route::get('user/cek-kegiatan', 'User\KegiatanController@index')->name('user.cek-kegiatan');

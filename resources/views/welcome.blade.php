@@ -1,94 +1,147 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.welcome')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    </head>
-    <body stylesheet="padding-top: 3.5rem;">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-teal-600">
-            <a class="navbar-brand" href="#">TPQ Masjid Ziyaadaturrahman</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="{{route('pendaftaran.create')}}">Pendaftaran</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    @if (Route::has('login'))
-                        <div class="top-right links">
-                            @auth
-                                <a href="{{ url('/home') }}" class="text-white">Home</a>
-                            @else
-                                <a href="{{ route('login') }}" class="btn btn-outline-info mr-2">Login</a>
-
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="btn btn-outline-warning">Register</a>
-                                @endif
-                            @endauth
+@section('content')
+<div class="container" style="margin-top: -90px;">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h3>Kegiatan TPQ Masjid Ziyaadaturrahman</h3>
+                    <p class="text-muted">pembaruan terakhir</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" srcset="">
+                                <div class="card-body">
+                                    <h3>Maulid nabi muhammad</h3>
+                                    <div class="d-flex justify-content-between">
+                                        <h6>12-11-2020</h6>
+                                        <h6>18:00</h6>
+                                    </div>
+                                    <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
+                                    <a href="http://" class="btn btn-info btn-block">Daftar</a>
+                                </div>
+                            </div>
                         </div>
-                    @endif
-                </div>
-            </div>
-        </nav>
-        <main role="main" class="mb-3">
-            <div class="jumbotron" style="background-image: url('banner/tpq.jpg'); background-size: 99%;">
-                <div class="container">
-                    <h1 class="display-3 text-white">Hello, </h1>
-                    <p class="text-white">
-                        Selamat datang di website resmi TPQ Masjid Ziyaadaturrahman
-                    </p>
-                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-                </div>
-            </div>
-            <div class="container">
-                <div class="card border-0 shadow" style="margin-top: -70px;">
-                    <div class="card-body">
-                        <div>
-                            <h3>Prosedur pendaftaran online</h3>
-                            <ul>
-                                <li>Akses situs</li>
-                                <li>klik menu pendaftaran</li>
-                                <li>masukan semua informasi dengan benar</li>
-                                <li>melakukan test secara langsung</li>
-                                <li>informasi diterima dan tidak nya akan di infokan ke email</li>
-                                <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
-                            </ul>
+                        <div class="col-md-4">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" srcset="">
+                                <div class="card-body">
+                                    <h3>Maulid nabi muhammad</h3>
+                                    <div class="d-flex justify-content-between">
+                                        <h6>12-11-2020</h6>
+                                        <h6>18:00</h6>
+                                    </div>
+                                    <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
+                                    <a href="http://" class="btn btn-info btn-block">Daftar</a>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h3>Pendaftaran secara offline</h3>
-                            <li>Silahkan Datang ke alamat ini</li>
-                            <li>Silahkan mengambil formulir dibagian pendaftaran</li>
-                            <li>setelah mengisi informasi dan menyerahkan formulir</li>
-                            <li>melakukan test secara langsung</li>
-                            <li>informasi diterima dan tidak nya akan di infokan ke email</li>
-                            <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
+                        <div class="col-md-4">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" srcset="">
+                                <div class="card-body">
+                                    <h3>Maulid nabi muhammad</h3>
+                                    <div class="d-flex justify-content-between">
+                                        <h6>12-11-2020</h6>
+                                        <h6>18:00</h6>
+                                    </div>
+                                    <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
+                                    <a href="http://" class="btn btn-info btn-block">Daftar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-md-12">
+                            <h3 class="text-center">JADWAL KHOTIB JUM'AT 2020</h3>
+                            <h3 class="text-center">Masjid Ziyaadaturrahman Jatimulya Bekasi</h3>
+                            <div class="card">
+                                <div class="card-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama Khotib</th>
+                                                <th>Telpon</th>
+                                                <th>Alamat</th>
+                                                <th>Tgl/Jum'at Ke</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="5">Januari</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Ust.Drs. H Agus Salim, MAg</td>
+                                                <td>082113576630</td>
+                                                <td>Al Furqon</td>
+                                                <td>03-01-2020 / I</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Ust.Drs. H Tb Saiful Rahman</td>
+                                                <td>08158747340</td>
+                                                <td>Mutiara Gading</td>
+                                                <td>10-01-2020 / II</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Ust.H Slamet M. Abda</td>
+                                                <td>081310583344</td>
+                                                <td>Ziyaadaturrahman</td>
+                                                <td>17-01-2020 / III</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Ust.A Rachmat</td>
+                                                <td>087879022164</td>
+                                                <td>Ziyaadaturrahman</td>
+                                                <td>24-01-2020 / IV</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Ust. Fauzi Mukhlis</td>
+                                                <td>081280239624</td>
+                                                <td>Masjid Raya</td>
+                                                <td>31-01-2020 / V</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <footer class="footer mt-auto py-3">
-            <div class="container">
-                <span>© 2020 Youre Name. All Rights Reserved.</span>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0">
+                <div class="card-body">
+                    <div>
+                        <h3>Prosedur pendaftaran online</h3>
+                        <ul>
+                            <li>Akses situs</li>
+                            <li>klik menu pendaftaran</li>
+                            <li>masukan semua informasi dengan benar</li>
+                            <li>melakukan test secara langsung</li>
+                            <li>informasi diterima dan tidak nya akan di infokan ke email</li>
+                            <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Pendaftaran secara offline</h3>
+                        <li>Silahkan Datang ke alamat ini</li>
+                        <li>Silahkan mengambil formulir dibagian pendaftaran</li>
+                        <li>setelah mengisi informasi dan menyerahkan formulir</li>
+                        <li>melakukan test secara langsung</li>
+                        <li>informasi diterima dan tidak nya akan di infokan ke email</li>
+                        <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
+                    </div>
+                </div>
             </div>
-        </footer>
-    </body>
-</html>
+        </div>
+    </div>
+</div>
+@endsection
