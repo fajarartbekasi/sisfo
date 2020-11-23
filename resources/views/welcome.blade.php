@@ -9,48 +9,21 @@
                     <h3>Kegiatan TPQ Masjid Ziyaadaturrahman</h3>
                     <p class="text-muted">pembaruan terakhir</p>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card border-0">
-                                <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" srcset="">
-                                <div class="card-body">
-                                    <h3>Maulid nabi muhammad</h3>
-                                    <div class="d-flex justify-content-between">
-                                        <h6>12-11-2020</h6>
-                                        <h6>18:00</h6>
+                        @foreach($kegiatans as $kegiatan)
+                            <div class="col-md-4">
+                                <div class="card border-0">
+                                    <img src="{{ url('storage/'. $kegiatan->images) }}" class="card-img-top" alt="" srcset="">
+                                    <div class="card-body">
+                                        <h3>{{$kegiatan->judul}}</h3>
+                                        <div class="d-flex justify-content-between">
+                                            <h6>{{$kegiatan->tanggal_kegiatan}}</h6>
+                                            <h6>{{$kegiatan->jam}}</h6>
+                                        </div>
+                                        <h4 class="pt-3 pb-3">{{$kegiatan->pengisi_materi}}</h4>
                                     </div>
-                                    <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                    <a href="http://" class="btn btn-info btn-block">Daftar</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card border-0">
-                                <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" srcset="">
-                                <div class="card-body">
-                                    <h3>Maulid nabi muhammad</h3>
-                                    <div class="d-flex justify-content-between">
-                                        <h6>12-11-2020</h6>
-                                        <h6>18:00</h6>
-                                    </div>
-                                    <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                    <a href="http://" class="btn btn-info btn-block">Daftar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card border-0">
-                                <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" srcset="">
-                                <div class="card-body">
-                                    <h3>Maulid nabi muhammad</h3>
-                                    <div class="d-flex justify-content-between">
-                                        <h6>12-11-2020</h6>
-                                        <h6>18:00</h6>
-                                    </div>
-                                    <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                    <a href="http://" class="btn btn-info btn-block">Daftar</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="row pt-3">
                         <div class="col-md-12">

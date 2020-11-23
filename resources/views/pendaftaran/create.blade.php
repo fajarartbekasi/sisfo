@@ -13,6 +13,11 @@
 
                     <form action="{{route('pendaftaran.store')}}" method="post">
                         @csrf
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success')}}
+                            </div>
+                        @endif
                         <div class="form-group">
                             <label for="" class="mr-3">Pilihan Masuk Di PP. </label>
                             <select name="pilihan_masuk" id="" class="form-control">

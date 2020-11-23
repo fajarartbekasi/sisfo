@@ -20,6 +20,11 @@
                 <form action="{{route('pendaftaran.update', $pendaftaran->id)}}" method="post" class="pt-3">
                     @csrf
                     @method('PATCH')
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success')}}
+                        </div>
+                    @endif
                     <div class="form-group">
                         <input type="text" name="no_pendaftaran" class="form-control border-0" value="{{$pendaftaran->no_pendaftaran}}" readonly id="">
                     </div>

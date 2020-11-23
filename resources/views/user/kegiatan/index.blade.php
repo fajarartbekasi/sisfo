@@ -9,90 +9,21 @@
                     <div class="card-body">
                         <h3>Kegiatan Masjid Ziyaadaturahman</h3>
                         <div class="row">
+                            @foreach($kegiatans as $kegiatan)
                             <div class="col-md-4">
                                 <div class="card border-0">
-                                    <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" >
+                                    <img src="{{ url('storage/'. $kegiatan->images) }}" class="card-img-top" alt="" srcset="">
                                     <div class="card-body">
-                                        <h3>Maulid nabi muhammad</h3>
+                                        <h3>{{$kegiatan->judul}}</h3>
                                         <div class="d-flex justify-content-between">
-                                            <h6>12-11-2020</h6>
-                                            <h6>18:00</h6>
+                                            <h6>{{$kegiatan->tanggal_kegiatan}}</h6>
+                                            <h6>{{$kegiatan->jam}}</h6>
                                         </div>
-                                        <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                        <a href="http://" class="btn btn-info btn-block">Daftar</a>
+                                        <h4 class="pt-3 pb-3">{{$kegiatan->pengisi_materi}}</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card border-0">
-                                    <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" >
-                                    <div class="card-body">
-                                        <h3>Maulid nabi muhammad</h3>
-                                        <div class="d-flex justify-content-between">
-                                            <h6>12-11-2020</h6>
-                                            <h6>18:00</h6>
-                                        </div>
-                                        <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                        <a href="http://" class="btn btn-info btn-block">Daftar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card border-0">
-                                    <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" >
-                                    <div class="card-body">
-                                        <h3>Maulid nabi muhammad</h3>
-                                        <div class="d-flex justify-content-between">
-                                            <h6>12-11-2020</h6>
-                                            <h6>18:00</h6>
-                                        </div>
-                                        <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                        <a href="http://" class="btn btn-info btn-block">Daftar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card border-0">
-                                    <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" >
-                                    <div class="card-body">
-                                        <h3>Maulid nabi muhammad</h3>
-                                        <div class="d-flex justify-content-between">
-                                            <h6>12-11-2020</h6>
-                                            <h6>18:00</h6>
-                                        </div>
-                                        <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                        <a href="http://" class="btn btn-info btn-block">Daftar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card border-0">
-                                    <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" >
-                                    <div class="card-body">
-                                        <h3>Maulid nabi muhammad</h3>
-                                        <div class="d-flex justify-content-between">
-                                            <h6>12-11-2020</h6>
-                                            <h6>18:00</h6>
-                                        </div>
-                                        <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                        <a href="http://" class="btn btn-info btn-block">Daftar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card border-0">
-                                    <img src="{{asset('banner/undraw.png')}}" class="card-img-top" alt="" >
-                                    <div class="card-body">
-                                        <h3>Maulid nabi muhammad</h3>
-                                        <div class="d-flex justify-content-between">
-                                            <h6>12-11-2020</h6>
-                                            <h6>18:00</h6>
-                                        </div>
-                                        <h4 class="pt-3 pb-3">Syekh Ali Zaber</h4>
-                                        <a href="http://" class="btn btn-info btn-block">Daftar</a>
-                                    </div>
-                                </div>
-                            </div>
+                        @endforeach
                         </div>
                     </div>
                 </div>

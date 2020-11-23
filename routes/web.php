@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
@@ -40,6 +38,8 @@ Route::group(['prefix' => 'Data'], function(){
 Route::group(['prefix' => 'kegiatan'], function (){
 
     route::get('/create', 'Kegiatan\KegiatanController@create')->name('kegiatan.create');
+
+    route::post('/store', 'Kegiatan\KegiatanController@store')->name('kegiatan.store');
 });
 
 Route::get('about', 'AboutController@index')->name('about');
