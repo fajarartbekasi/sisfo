@@ -14,7 +14,7 @@
                     <a class="nav-link" href="{{ route('pendaftaran') }}">{{ __('Pendaftaran') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('kegiatan.create') }}">{{ __('Kegiatan') }}</a>
+                    <a class="nav-link" href="{{ route('kegiatan.index') }}">{{ __('Kegiatan') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

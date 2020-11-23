@@ -36,10 +36,12 @@ Route::group(['prefix' => 'Data'], function(){
 });
 
 Route::group(['prefix' => 'kegiatan'], function (){
-
+    route::get('/index', 'Kegiatan\KegiatanController@index')->name('kegiatan.index');
     route::get('/create', 'Kegiatan\KegiatanController@create')->name('kegiatan.create');
-
+    route::get('/edit/{kegiatan}', 'Kegiatan\KegiatanController@edit')->name('kegiatan.edit');
     route::post('/store', 'Kegiatan\KegiatanController@store')->name('kegiatan.store');
+    route::patch('/update/{kegiatan}', 'Kegiatan\KegiatanController@update')->name('kegiatan.update');
+    Route::delete('/destroy/{kegiatan}', 'Kegiatan\KegiatanController@destroy')->name('kegiatan.destroy');
 });
 
 Route::get('about', 'AboutController@index')->name('about');

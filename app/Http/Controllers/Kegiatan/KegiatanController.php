@@ -9,6 +9,16 @@ use Intervention\Image\Facades\Image;
 
 class KegiatanController extends Controller
 {
+    public function __construct()
+    {
+        $kegiatan = new Kegiatan;
+    }
+    public function index()
+    {
+        $kegiatans = Kegiatan::paginate(5);
+
+        return view('kegiatan.index', compact('kegiatans'));
+    }
     public function create()
     {
         return view('kegiatan.create');
@@ -21,7 +31,34 @@ class KegiatanController extends Controller
 
         return redirect()->back()->with(['success' => 'Kegiatan Masjid Ziaadaturrahman berhasil di tambah']);
     }
+    public function edit($id)
+    {
+        $kegiatan = Kegiatan::findOrFail($id);
 
+        return view('kegiatan.edit',compact('kegiatan'));
+    }
+    public function update(Kegiatan $kegiatan)
+    {
+        $kegiatan->update($this->validateRequest());
+
+        $this->storeImage($kegiatan);
+
+        return redirect()->back()->with(['success' => 'Data kegiatan berhasil di update']);
+    }
+    public function destroy(Kegiatan $kegiatan)
+    {
+        $kegiatan->delete();
+
+
+        if(\File::exists(public_path('storage/'. $kegiatan->images)))
+        {
+            \File::delete(public_path('storage/'. $kegiatan->images));
+        }
+
+        return redirect()->back()->with(
+                   ['success' =>
+                   'Activity berhasil di hapus']);
+    }
     private function validateRequest(){
         return tap(request()->validate([
                 'judul'             => 'required',
