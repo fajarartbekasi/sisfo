@@ -29,25 +29,32 @@
                         <th>Kode Pendaftaran</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
-                        <th>T.T.L</th>
+                        <th>Status</th>
                         <th>Option</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>dasdasd213412</td>
-                        <td>John Doe</td>
-                        <td>Laki - Laki</td>
-                        <td>Bekasi, 21-21-20</td>
-                        <td>
-                            <form action="" method="post">
-                                <a href="http://" class="btn btn-outline-info btn-sm">Edit</a>
-                                <button class="btn btn-outline-danger btn-sm">Hapus</button>
-                            </form>
-                        </td>
-                    </tr>
+                    @foreach($pendaftarans as $pendaftaran)
+                        <tr>
+                            <td>{{$pendaftaran->no_pendaftaran}}</td>
+                            <td>{{$pendaftaran->nama}}</td>
+                            <td>{{$pendaftaran->jenis_kelamin}}</td>
+                            <td>
+                                <span class="badge badge-pill badge-info">
+                                    {{$pendaftaran->status}}
+                                </span>
+                            </td>
+                            <td>
+                                <form action="" method="post">
+                                    <a href="{{route('pendaftaran.show', $pendaftaran->id)}}" class="btn btn-outline-info btn-sm">Detail</a>
+                                    <button class="btn btn-outline-danger btn-sm">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
+            {{$pendaftarans->links()}}
         </div>
     </div>
 </div>

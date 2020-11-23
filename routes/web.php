@@ -25,6 +25,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'pendaftaran'], function(){
     Route::get('/', 'PendaftaranController@index')->name('pendaftaran');
     Route::get('/create', 'PendaftaranController@create')->name('pendaftaran.create');
+
+    Route::post('/store','PendaftaranController@store')->name('pendaftaran.store');
+    Route::get('/show/{pendaftaran}', 'PendaftaranController@show')->name('pendaftaran.show');
+    Route::patch('/update/{pendaftaran}', 'PendaftaranController@update')->name('pendaftaran.update');
 });
 
 Route::group(['prefix' => 'Data'], function(){
