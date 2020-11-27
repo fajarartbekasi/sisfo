@@ -21,6 +21,31 @@
                 </div>
             </div>
         </div>
+        <div class="pt-4 mb-4">
+            <form action="{{route('laporan-santri.ditolak')}}" method="get">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Dari Tanggal</label>
+                            <input type="date" name="tgl_awal" class="tm form-control" data-date-format="DD/MMM/YYYY" id="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Sampai Tanggal</label>
+                            <input type="date" name="tgl_akhir" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-info">Cari Laporan</button>
+                            <a href="{{route('rekap.laporan-santri.ditolak')}}" class="btn btn-secondary">Rekap Laporan</a>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
         <div>
             <table class="table table-striped">
                 <thead>
@@ -29,7 +54,6 @@
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>Status</th>
-                        <th>Option</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,9 +66,6 @@
                                 <span class="badge badge-pill badge-info">
                                     {{$pendaftaran->status}}
                                 </span>
-                            </td>
-                            <td>
-                               <a href="http://" class="btn btn-outline-info btn-sm">Print</a>
                             </td>
                         </tr>
                     @endforeach

@@ -50,9 +50,11 @@ Route::get('user/cek-kegiatan', 'User\KegiatanController@index')->name('user.cek
 
 Route::group(['prefix' => 'laporan-santri'], function(){
     route::get('diterima', 'Santri\DiterimaController@periode')->name('laporan-santri.diterima');
+    route::get('ditolak', 'Laporan\DitolakController@periode')->name('laporan-santri.ditolak');
 
 });
 
 Route::group(['prefix' => 'rekap'], function(){
     route::get('laporan-santri/diterima', 'Santri\DiterimaController@rekap')->name('rekap.laporan-santri.diterima');
+    route::get('laporan-santri/ditolak', 'Laporan\DitolakController@rekap')->name('rekap.laporan-santri.ditolak');
 });
