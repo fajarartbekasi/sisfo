@@ -17,9 +17,33 @@
                     <div>
                         Data Santri yang telah diterima
                     </div>
-
                 </div>
             </div>
+        </div>
+        <div class="pt-4 mb-4">
+            <form action="{{route('laporan-santri.diterima')}}" method="get">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Dari Tanggal</label>
+                            <input type="date" name="tgl_awal" class="tm form-control" data-date-format="DD/MMM/YYYY" id="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Sampai Tanggal</label>
+                            <input type="date" name="tgl_akhir" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-info">Cari Laporan</button>
+                            <a href="{{route('rekap.laporan-santri.diterima')}}" class="btn btn-secondary">Rekap Laporan</a>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
         </div>
         <div>
             <table class="table table-striped">
@@ -44,7 +68,7 @@
                                 </span>
                             </td>
                             <td>
-                               <a href="http://" class="btn btn-outline-info btn-sm">Print</a>
+                               <a href="{{route('laporan-santri.diterima')}}" class="btn btn-outline-info btn-sm">Print</a>
                             </td>
                         </tr>
                     @endforeach

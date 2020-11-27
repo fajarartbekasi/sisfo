@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use Nexmo\Laravel\Facade\Nexmo;
 class PendaftaranController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['create', 'store']]);
+    }
     public function index()
     {
         $pendaftarans = Pendaftaran::where('status','daftar')->paginate(5);
@@ -72,7 +76,11 @@ class PendaftaranController extends Controller
     {
         $pendaftaran = Pendaftaran::findOrFail($id);
 
-        Nexmo::message()->send([
+        $pendaftaran->update($request->all());
+
+        if($pendaftaran->save()){
+            $pendaftaran = Pendaftaran::findOrFail($id);
+            Nexmo::message()->send([
             'to'   => $pendaftaran->no_telp,
             'from' => '16105552344',
             'text' => 'Assallamuallaikum.wr.wb'
@@ -82,8 +90,7 @@ class PendaftaranController extends Controller
                       'terimakasih telah melakukan pendaftaran dan mengikuti test di TPQ Masjid Ziaadaturahman semoga kamu terus semangat terimakasih'
         ]);
 
-        $pendaftaran->update($request->all());
-
+        }
         return redirect()->back()->with(['success' => 'Pendaftaran berhasil di perbarui']);
     }
 }

@@ -11,6 +11,8 @@ class KegiatanController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth');
+
         $kegiatan = new Kegiatan;
     }
     public function index()

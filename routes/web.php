@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Auth::routes();
 
@@ -47,3 +47,12 @@ Route::group(['prefix' => 'kegiatan'], function (){
 Route::get('about', 'AboutController@index')->name('about');
 
 Route::get('user/cek-kegiatan', 'User\KegiatanController@index')->name('user.cek-kegiatan');
+
+Route::group(['prefix' => 'laporan-santri'], function(){
+    route::get('diterima', 'Santri\DiterimaController@periode')->name('laporan-santri.diterima');
+
+});
+
+Route::group(['prefix' => 'rekap'], function(){
+    route::get('laporan-santri/diterima', 'Santri\DiterimaController@rekap')->name('rekap.laporan-santri.diterima');
+});

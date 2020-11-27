@@ -105,7 +105,7 @@
                         <input type="hidden" name="status" value="daftar" class="form-control" >
                         <div class="mb-2">
                             <button class="btn btn-outline-info">Simpan Pendaftaran</button>
-                            <a href="{{route('pendaftaran')}}" class="btn btn-outline-secondary">Cancel</a>
+                            <a href="{{route('welcome')}}" class="btn btn-outline-secondary">Cancel</a>
                         </div>
                     </form>
                 </div>
