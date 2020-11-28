@@ -53,6 +53,7 @@
                         <th>Kode Pendaftaran</th>
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
+                        <th>Tgl Daftar</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -62,6 +63,7 @@
                             <td>{{$pendaftaran->no_pendaftaran}}</td>
                             <td>{{$pendaftaran->nama}}</td>
                             <td>{{$pendaftaran->jenis_kelamin}}</td>
+                            <td>{{$pendaftaran->created_at->toDateString()}}</td>
                             <td>
                                 <span class="badge badge-pill badge-info">
                                     {{$pendaftaran->status}}

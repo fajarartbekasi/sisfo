@@ -57,4 +57,5 @@ Route::group(['prefix' => 'laporan-santri'], function(){
 Route::group(['prefix' => 'rekap'], function(){
     route::get('laporan-santri/diterima', 'Santri\DiterimaController@rekap')->name('rekap.laporan-santri.diterima');
     route::get('laporan-santri/ditolak', 'Laporan\DitolakController@rekap')->name('rekap.laporan-santri.ditolak');
+    route::get('laporan-pendaftaran', 'Laporan\PendaftaranController@rekap')->name('rekap.laporan-pendaftaran');
 });
