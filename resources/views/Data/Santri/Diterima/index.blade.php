@@ -54,7 +54,6 @@
                         <th>Jenis Kelamin</th>
                         <th>Tgl Daftar</th>
                         <th>Status</th>
-                        <th>Option</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,9 +67,6 @@
                                 <span class="badge badge-pill badge-info">
                                     {{$pendaftaran->status}}
                                 </span>
-                            </td>
-                            <td>
-                               <a href="{{route('laporan-santri.diterima')}}" class="btn btn-outline-info btn-sm">Print</a>
                             </td>
                         </tr>
                     @endforeach

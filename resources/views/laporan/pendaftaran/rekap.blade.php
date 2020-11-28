@@ -10,7 +10,9 @@
                         <br>
                         MASJID ZIAADATURAHMAN
                         <br>
-                        Alamat Belum
+                        Jl.kecapi lll blok c perumahan jatimulya-bekasi 17515
+                        <br>
+                        Hp. 0813 1058 3344
                     </h3>
                     <hr>
                     <br>

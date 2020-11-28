@@ -9,8 +9,9 @@
                     <h3>PONDOK PESANTREN
                         <br>
                         MASJID ZIAADATURAHMAN
+                        Jl.kecapi lll blok c perumahan jatimulya-bekasi 17515
                         <br>
-                        Alamat Belum
+                        Hp. 0813 1058 3344
                     </h3>
                     <hr>
                 </P>
