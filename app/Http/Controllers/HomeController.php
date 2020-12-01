@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pendaftaran;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = [
+            'diterima' => Pendaftaran::where('status', 'di terima')->count(),
+            'ditolak'  => Pendaftaran::where('status', 'di terima')->count(),
+        ];
+        return view('home', $data);
     }
 }

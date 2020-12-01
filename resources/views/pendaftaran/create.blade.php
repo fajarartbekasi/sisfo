@@ -72,8 +72,8 @@
                             </textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">No Telp Orang Tua</label>
-                            <input type="text" name="no_telp" id="" class="form-control">
+                            <label for="">E-Mail</label>
+                            <input type="email" name="email" id="" class="form-control">
                         </div>
                         <div class="alert alert-info">
                             <h3>Perincian Pembayaran</h3>

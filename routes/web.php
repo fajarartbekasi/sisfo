@@ -46,7 +46,7 @@ Route::group(['prefix' => 'kegiatan'], function (){
 
 Route::get('about', 'AboutController@index')->name('about');
 
-Route::get('user/cek-kegiatan', 'User\KegiatanController@index')->name('user.cek-kegiatan');
+Route::get('cek-kegiatan', 'User\KegiatanController@index')->name('cek-kegiatan');
 
 Route::group(['prefix' => 'laporan-santri'], function(){
     route::get('diterima', 'Santri\DiterimaController@periode')->name('laporan-santri.diterima');

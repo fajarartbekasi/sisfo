@@ -31,7 +31,7 @@
                         <a class="nav-link " href="{{route('pendaftaran.create')}}">Pendaftaran</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="{{route('user.cek-kegiatan')}}">Kegiatan</a>
+                        <a class="nav-link " href="{{route('cek-kegiatan')}}">Kegiatan</a>
                     </li>
                 </ul>
                 <div class="d-flex">

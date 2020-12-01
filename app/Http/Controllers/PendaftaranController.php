@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Pendaftaran;
 use Illuminate\Http\Request;
-use Nexmo\Laravel\Facade\Nexmo;
+use App\Mail\PendaftaranMail;
+use App\Mail\StatusMail;
+use Illuminate\Support\Facades\Mail;
+
 class PendaftaranController extends Controller
 {
     public function __construct()
@@ -36,17 +39,12 @@ class PendaftaranController extends Controller
             'pekerjaan_ibu'  => 'required',
             'pekerjaan_ayah' => 'required',
             'alamat_orangtua'=> 'required',
-            'no_telp'        => 'required',
+            'email'          => 'required',
             'status'         => 'required',
         ]);
-        Nexmo::message()->send([
-            'to'   => $request->get('no_telp'),
-            'from' => '16105552344',
-            'text' => 'Assallamuallaikum.wr.wb'.$request->get('nama').
-                      'kami dari TPQ Masjid Ziaadaturahman ingin memberitahukan bahwa pendaftaran kamu telah diterima
-                      harap melakukan test seleksi untuk tahap berikut nya untuk informasi test
-                      akan kami beritahukan di situs web kami dengan cara cek kegiatan terimakasih.'
-        ]);
+
+        $to = Mail::to($pendaftaran->email)->send(new PendaftaranMail($pendaftaran));
+
         $pendaftaran = Pendaftaran::create([
             'pilihan_masuk'  => $request->input('pilihan_masuk'),
             'nama'           => $request->input('nama'),
@@ -59,11 +57,11 @@ class PendaftaranController extends Controller
             'pekerjaan_ibu'  => $request->input('pekerjaan_ibu'),
             'pekerjaan_ayah' => $request->input('pekerjaan_ayah'),
             'alamat_orangtua'=> $request->input('alamat_orangtua'),
-            'no_telp'        => $request->input('no_telp'),
+            'email'          => $request->input('email'),
             'status'         => $request->input('status'),
         ]);
 
-        return redirect()->back()->with(['success' => 'Pendaftaran kamu telah dikirim terimakasih']);
+        return redirect()->back()->with(['success' => 'Pendaftaran kamu telah dikirim silahkan cek email anda terimakasih']);
     }
 
     public function show($id)
@@ -78,19 +76,8 @@ class PendaftaranController extends Controller
 
         $pendaftaran->update($request->all());
 
-        if($pendaftaran->save()){
-            $pendaftaran = Pendaftaran::findOrFail($id);
-            Nexmo::message()->send([
-            'to'   => $pendaftaran->no_telp,
-            'from' => '16105552344',
-            'text' => 'Assallamuallaikum.wr.wb'
-                      .$pendaftaran->nama.
-                      'kami dari TPQ Masjid Ziaadaturahman ingin memberitahukan bahwa hasil seleksi kamu dinyatakan'
-                      .$pendaftaran->status.
-                      'terimakasih telah melakukan pendaftaran dan mengikuti test di TPQ Masjid Ziaadaturahman semoga kamu terus semangat terimakasih'
-        ]);
+        $to = Mail::to($pendaftaran->email)->send(new StatusMail($pendaftaran));
 
-        }
         return redirect()->back()->with(['success' => 'Pendaftaran berhasil di perbarui']);
     }
 }

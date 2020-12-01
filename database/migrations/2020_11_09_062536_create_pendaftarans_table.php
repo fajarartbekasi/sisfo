@@ -27,7 +27,7 @@ class CreatePendaftaransTable extends Migration
             $table->string('pekerjaan_ibu');
             $table->string('pekerjaan_ayah');
             $table->string('alamat_orangtua');
-            $table->string('no_telp');
+            $table->string('email');
             $table->string('status');
             $table->timestamps();
         });

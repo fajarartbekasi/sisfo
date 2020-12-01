@@ -98,19 +98,21 @@
                             <li>Akses situs</li>
                             <li>klik menu pendaftaran</li>
                             <li>masukan semua informasi dengan benar</li>
-                            <li>melakukan test secara langsung</li>
-                            <li>informasi diterima dan tidak nya akan di infokan ke email</li>
-                            <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
+                            <li>Pada saat melakukan test, harap bawa bukti pembayaran</li>
+                            
+                            <li>informasi diterima dan tidak nya akan di infokan ke nomor handphone anda</li>
+                            
                         </ul>
                     </div>
                     <div>
                         <h3>Pendaftaran secara offline</h3>
-                        <li>Silahkan Datang ke alamat ini</li>
+                        <li>Silahkan Datang ke alamat Jl.kecapi lll blok c perumahan jatimulya-bekasi 17515</li>
                         <li>Silahkan mengambil formulir dibagian pendaftaran</li>
                         <li>setelah mengisi informasi dan menyerahkan formulir</li>
+                        <li>Dan membayar uang pendaftaran santri baru</li>
                         <li>melakukan test secara langsung</li>
-                        <li>informasi diterima dan tidak nya akan di infokan ke email</li>
-                        <li>Bagi santri yang sudah di terima silahkan melakukan upload bukti pembayaran melalui link yang kami berikan di email</li>
+                        <li>informasi diterima dan tidak nya akan di infokan ke nomor handphone anda</li>
+                        
                     </div>
                 </div>
             </div>

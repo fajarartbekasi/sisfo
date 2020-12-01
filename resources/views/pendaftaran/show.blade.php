@@ -62,7 +62,7 @@
                         <input type="text" name="alamat_orangtua" class="form-control " value="{{$pendaftaran->alamat_orangtua}}"id="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="no_telp" class="form-control " value="{{$pendaftaran->no_telp}}"id="">
+                        <input type="text" name="email" class="form-control " value="{{$pendaftaran->email}}"id="">
                     </div>
                     <div class="form-group">
                         <input type="text" name="status" class="form-control " value="{{$pendaftaran->status}}"id="">
