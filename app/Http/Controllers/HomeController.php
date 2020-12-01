@@ -25,8 +25,9 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
+            'daftar'   => Pendaftaran::whereNotIn('status', ['di terima','di tolak'])->count(),
             'diterima' => Pendaftaran::where('status', 'di terima')->count(),
-            'ditolak'  => Pendaftaran::where('status', 'di terima')->count(),
+            'ditolak'  => Pendaftaran::where('status', 'di tolak')->count(),
         ];
         return view('home', $data);
     }
